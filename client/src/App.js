@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import StudentList from './components/StudentList';
-import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AddStudent from './components/AddStudent';
 import EditStudent from './components/EditStudent';
 import Navbar from './components/Navbar';

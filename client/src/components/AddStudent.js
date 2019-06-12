@@ -19,7 +19,7 @@ class AddStudent extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/api/v1.0/students', this.state)
+        axios.post('/api/v1.0/students', this.state)
             .then(response => {
                 this.props.history.push('/students');
             })

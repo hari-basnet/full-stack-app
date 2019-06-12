@@ -6,7 +6,7 @@ const Student = (props) => {
 
     const deleteStudent = (id) => {
 
-        const url = `http://localhost:5000/api/v1.0/students/${id}`
+        const url = `/api/v1.0/students/${id}`
         axios.delete(url)
             .then(response => {
                 this.props.history.push('/students')

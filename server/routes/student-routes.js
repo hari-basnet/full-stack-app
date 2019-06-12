@@ -45,7 +45,7 @@ studentRoute.post('/students', (req, res) => {
 })
 
 // edit route
-studentRoute.put('/students/edit/:id', (req, res) => {
+studentRoute.put('/students/:id', (req, res) => {
     const _id = req.params.id;
     const { name, country, age, bio } = req.body;
     Student.findOne({ _id }, (err, student) => {
