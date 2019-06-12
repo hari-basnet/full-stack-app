@@ -44,4 +44,38 @@ studentRoute.post('/students', (req, res) => {
 
 })
 
+// edit route
+studentRoute.put('/students/edit/:id', (req, res) => {
+    const _id = req.params.id;
+    const { name, country, age, bio } = req.body;
+    Student.findOne({ _id }, (err, student) => {
+        if (err) {
+            return res.status(404).send('Something is wrong')
+        }
+        student.name = name;
+        student.country = country;
+        student.age = age;
+        student.bio = bio;
+        student.save().then(student => {
+            res.send('Saved')
+        })
+            .catch(error => console.log(error))
+    })
+
+})
+
+// delete route
+studentRoute.delete('/students/:id', (req, res) => {
+    const _id = req.params.id;
+    Student.deleteOne({ _id }, (err, student) => {
+        if (err) {
+            return res.status(404).send('Something is wrong')
+        }
+        res.send('A student has been deleted')
+
+    })
+
+})
+
+
 module.exports = studentRoute

@@ -14,9 +14,17 @@ class EditStudent extends Component {
         const url = `http://localhost:5000/api/v1.0/students/${id}`
         axios.get(url)
             .then(response => {
-                console.log(response)
+                const { name, country, age, bio } = response.data
+                this.setState({
+                    name,
+                    country,
+                    age,
+                    bio
+                })
             })
-            .catch(error => { })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     handleChange = (e) => {
@@ -28,7 +36,10 @@ class EditStudent extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/api/v1.0/students', this.state)
+        const id = this.props.match.params.id;
+        const url = `http://localhost:5000/api/v1.0/students/${id}`
+
+        axios.put(url, this.state)
             .then(response => {
                 this.props.history.push('/students');
             })
