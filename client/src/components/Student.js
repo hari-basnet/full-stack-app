@@ -10,7 +10,7 @@ const Student = (props) => {
             <td>{props.student.bio}</td>
             <tr>
                 <NavLink to={`/students/${props.student._id}`} className="btn btn-primary">Detail</NavLink> {' '} {' '}
-                <button className="btn btn-primary">Edit</button> {' '} {' '}
+                <NavLink to={`/edit/${props.student._id}`} className="btn btn-primary">Edit</NavLink> {' '} {' '}
                 <button className="btn btn-danger">Delete</button>
             </tr>
         </tr>
