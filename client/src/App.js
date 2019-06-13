@@ -7,6 +7,7 @@ import AddStudent from './components/AddStudent';
 import EditStudent from './components/EditStudent';
 import Navbar from './components/Navbar';
 import StudentDetail from './components/StudentDetail';
+import LandingPage from './components/Index'
 
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
             <Route path="/edit/:id" component={EditStudent} />
             <Route path="/students/:id" component={StudentDetail} />
             <Route path="/students" component={StudentList} />
-            <Route path="/" component={StudentList} />
+            <Route path="/" component={LandingPage} />
           </Switch>
         </div>
       </BrowserRouter>

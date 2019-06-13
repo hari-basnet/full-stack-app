@@ -67,7 +67,7 @@ studentRoute.put('/students/:id', (req, res) => {
 // delete route
 studentRoute.delete('/students/:id', (req, res) => {
     const _id = req.params.id;
-    Student.deleteOne({ _id }, (err, student) => {
+    Student.deleteOne({ _id }, (err) => {
         if (err) {
             return res.status(404).send('Something is wrong')
         }

@@ -40,7 +40,6 @@ class StudentList extends Component {
                             <th>Name</th>
                             <th>Country</th>
                             <th>Age</th>
-                            <th>Bio</th>
                             <th>Action</th>
                         </tr>
                     </thead>

@@ -12,19 +12,17 @@ class EditStudent extends Component {
     componentDidMount() {
         const id = this.props.match.params.id;
         const url = `/api/v1.0/students/${id}`
-        axios.get(url)
-            .then(response => {
-                const { name, country, age, bio } = response.data
-                this.setState({
-                    name,
-                    country,
-                    age,
-                    bio
-                })
+        axios.get(url).then(response => {
+            const { name, country, age, bio } = response.data
+            this.setState({
+                name,
+                country,
+                age,
+                bio
             })
-            .catch(error => {
-                console.log(error)
-            })
+        }).catch(error => {
+            console.log(error)
+        })
     }
 
     handleChange = (e) => {
@@ -41,9 +39,7 @@ class EditStudent extends Component {
         axios.put(url, this.state)
             .then(response => {
                 this.props.history.push('/students')
-
-            })
-            .catch(error => console.log(error))
+            }).catch(error => console.log(error))
         this.setState({
             name: '',
             country: '',
