@@ -8,6 +8,8 @@ import EditStudent from './components/EditStudent';
 import Navbar from './components/Navbar';
 import StudentDetail from './components/StudentDetail';
 import LandingPage from './components/Index'
+import Signup from './components/auth/Signup';
+import Signin from './components/auth/Signin';
 
 
 class App extends Component {
@@ -26,6 +28,8 @@ class App extends Component {
             <Route path="/edit/:id" component={EditStudent} />
             <Route path="/students/:id" component={StudentDetail} />
             <Route path="/students" component={StudentList} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/signin" component={Signin} />
             <Route path="/" component={LandingPage} />
           </Switch>
         </div>
